@@ -3,7 +3,7 @@
     padding: 0;
     text-decoration: none;
     list-style: none;
-    transition: .45s ease-in;
+    transition: .25s ease-in-out;
     box-sizing: border-box;
     text-transform: capitalize;
     border: none; 
@@ -11,6 +11,7 @@
 }
 :root{
     --main-color:#d3ad7f;
+    --hovered: #d3ad7f6b;
     --black:#13131a;
     --bg:#010103;
     --border:.1rem solid rgba(255,255,255,.3);
@@ -18,6 +19,7 @@
 html {
     scroll-behavior: smooth;
     scroll-margin-top: 1rem;
+
 }
 
 html::-webkit-scrollbar{
@@ -33,10 +35,16 @@ html::-webkit-scrollbar-thumb{
     border-radius: 5rem;
 }
 body {
-    width: 100%;
-    background-color: #fff;
-    position: relative;
+    width: auto;
+    background-color: var(--bg);
+    font-family: 'Roboto', sans-serif;
 }
+button {
+    cursor: pointer;
+}
+#ulClose0 {
+    display: none;
+} 
 header nav {
     background-color: var(--bg);
     height: 70px;
@@ -45,6 +53,8 @@ header nav {
     align-items: center;
     padding: 0 1rem;
     color: #fff;
+    position: relative;
+    border-bottom: var(--border);
 }
 header nav .img {
     width: 95px;
@@ -57,34 +67,594 @@ header nav .img img {
     width: 80%;
     height: 93%;
 } 
-header nav ul {
-    display: none;
+header nav ul, header .stuffs section.cart  {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 50%;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    padding: 40px;
+    font-size: 1.5rem;
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%); /* close */
 }
-  
-header nav .icons {
+header nav ul {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+}
+header nav ul.active {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); /* open */
+}
+header nav ul i {
+    color: #000;
+    float: right;
+}
+header nav ul li {
+    width: 100%;
+    height: 9%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header nav ul li a {
+    color: #000;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+header nav .space{
     width: 150px;
-    height: 80%;
+}header .stuffs ul{
+    position: fixed;
+    height: 100vh;
+    top: 70px;
+    right: 0;
+    width: 50%;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    padding: 40px;
+    font-size: 1.5rem;
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 100% 100%); /* close */
+}
+header .stuffs ul.active {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); /* open */
+}
+header .stuffs ul i {
+    color: #000;
+    float: right;
+}
+header .stuffs ul li {
+    width: 100%;
+    height: 9%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header .stuffs ul li a {
+    color: #000;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+}
+header nav .icons {
+    position: fixed;
+    right: 0;
+    width: 150px;
+    height: 50px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #000;
+    border-bottom-left-radius: 10px;
 }
 header nav .icons i {
     font-size: 1.3rem;
     cursor: pointer;
 }
+header nav .icons i:hover {
+    color: var(--main-color);
+}
+header nav .icons #barIcons0 {
+    display: none;
+}
+header .stuffs {
+    position: fixed;
+    width: 100%;
+}
+header .stuffs .search{
+    position: fixed;
+    left: 0;
+    width: 98%;
+    height: 70px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0); /* close */
+}
+header .stuffs .search.active {
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%); /* open */
+}
+header .stuffs .search input {
+    width: 90%;
+    height: 100%;
+    padding: 20px;
+}
+header .stuffs .search input::placeholder {
+    font-size: 1.2rem;
+}
+header .stuffs .search #label {
+    position: absolute;
+    top: 40%;
+    right: 10px;
+    font-size: 1.3rem;
+}
+header .stuffs section.cart {
+    width: 400px;
+    padding: 5px;
+}
+header .stuffs section.cart.active {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+header .stuffs section.cart {
+    position: fixed;
+    top: 70px;
+}
+header .stuffs section.cart .container {
+    width: 100%;
+    height: 150px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .stuffs section.cart .container div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .stuffs section.cart .container .img {
+    width: 40%;
+}
+header .stuffs section.cart .container .img img {
+    width: 70%;
+    height: 70%;
+}
+header .stuffs section.cart .container .text {
+    width: 50%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+header .stuffs section.cart .container .text h3 {
+    font-size: 1.6rem;
+}
+header .stuffs section.cart .container .text p {
+    font-size: 1.2rem;
+    color: var(--main-color);
+}
+header .stuffs section.cart .container .delete {
+    width: 10%;
+}
+header .stuffs section.cart .container .delete:hover {
+    color: var(--main-color);
+}
+header .stuffs section.cart button {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: var(--main-color);
+}
+header section.main {
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-image: url(images/home-img.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+header section.main div.container {
+    color: #fff;
+    width: 90%;
+    height: auto;
+    font-size: 1.2rem;
+    padding: 5px;
+}
+header section.main div.container h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+}
+header section.main div.container a button {
+    width: 30%;
+    height: 50px;
+    background-color: var(--main-color);
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 5px;
+    border: 2px solid transparent;
+}
+header section.main div.container a button:hover {
+    background-color: var(--hovered);
+    border: 2px solid var(--main-color);
+    width: 33%;
+}
+/* about section style */
+main section.about {
+    background-color: #000;
+    height: auto;
+    padding: 10px;
+}
+/* about section div container style */
+main section.about section.main div {
+    width: 100%;
+    height: 100%;
+}
+main section div.text{
+    color: var(--main-color);
+    width: 100%;
+    text-align: center;
+    border: 2px solid#000;
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    text-transform: uppercase;
+}
+main section div.text h1,
+main section div.text span{
+    text-transform: uppercase;
+}
+main section div.text span{
+    color: #fff;
+}
+main section.about section.main{
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+}
+main section.about section.main div {
+    width: 100%;
+    height: 50%;
+}
+main section.about section.main div.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main section.about section.main div.txt {
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--black);
+}
+main section.about section.main div.txt h3{
+    font-size: 2.2rem;
+}
+main section.about section.main div.txt p{
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #ffffffcb;
+}
+main section.about section.main div.txt button{
+    width: 10rem;
+    height: 50px;
+    font-size: 1.1rem;
+    background-color: var(--main-color);
+    color: #fff;
+}
+main section.about section.main div.txt button:hover {
+    width: 11rem;
+    background-color: var(--hovered);
+    border: 2px solid var(--main-color);
+}
+/* menu section style */
+main section.margin {
+    margin-bottom: 2rem;
+}
+main section.menu div.text, 
+main section.products div.text,
+main section.reviews div.text{
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+main section.menu div.text span,
+main section.products div.text span,
+main section.reviews div.text span{
+    color: var(--main-color);
+}
+main section.menu section.main1 {
+    width: 100%;
+    padding: 10px 5px;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 98%);
+    grid-template-rows: repeat(6, 350px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+main section.menu section.main1 .box {
+    border: 1px solid #fff;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+main section.menu section.main1 .box:hover {
+    background-color: #fff;
+}
+main section.menu section.main1 .box .inner {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #f5fffa;
+    text-align: center;
+}
+main section.menu section.main1 section.box .img img{
+    width: 120px;
+    height: 120px;
+}
+main section.menu section.main1 section.box .txt{
+    font-size: 1.1rem;
+    transition: all.1s;
+}
+main section.menu section.main1 .box:hover .txt {
+    color: #000;
+}
+main section.menu section.main1 section.box .txt p {
+    font-size: 2rem;
+}
+main section.menu section.main1 section.box .txt p span {
+    font-size: 1.3rem;
+    text-decoration: line-through;
+    transition: .0s;
+}
+main section.menu section.main1 section.box .txt button{
+    width: 200px;
+    height: 40px;
+    background-color: var(--main-color);
+    border: 2px solid transparent;
+    font-size: 1.2rem;
+}
+main section.menu section.main1 section.box .txt button:hover {
+    border-color: var(--main-color);
+    background-color: var(--hovered);
+}
+main section.products section.main2 {
+    width: 98%;
+    padding: 10px 5px;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 98%);
+    grid-template-rows: repeat(3, 600px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+main section.products section.main2 section.box{
+    border: 1px solid #fff;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding: 20px;
+}
+main section.products section.main2 section.box div {
+    width: 100%;
+}
+main section.products section.main2 section.box .top {
+    height: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+main section.products section.main2 section.box .top a{
+    padding: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 1.2rem;
+}
+main section.products section.main2 section.box .top a:hover {
+    color: var(--main-color);
+}
+main section.products section.main2 section.box .middle{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main section.products section.main2 section.box .middle img {
+    width: 70%;
+    height: 100%;
+}
+main section.products section.main2 section.box .bottom{
+    height: 30%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+main section.products section.main2 section.box .bottom h3 span {
+    text-decoration: line-through;
+    font-size: 1.2rem;
+}
+main section.products section.main2 section.box .bottom section {
+    margin: 10px 0;
+    color: var(--main-color);
+}
+main section.reviews section.main3 {
+    width: 98%;
+    padding: 10px 5px;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 98%);
+    grid-template-rows: repeat(3, 600px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+main section.reviews section.main3 div.box {
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.2rem;
+    clip-path: polygon(0 0, 100% 11%, 100% 91%, 0% 100%);
+    background-color: transparent;
+}
+main section.reviews section.main3 div.box h1 {
+    font-size: 9rem;
+    height: 80px;
+}
+main section.reviews section.main3 div.box img {
+    width: 120px;
+    height: 120px;
+    clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%);
+}
+main section.reviews section.main3 div.box section {
+    font-size: 1.4rem;
+    color: var(--main-color);
+}
+main section.contact section.main4 {
+    width: 80%;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+}
+main section.contact section.main4 div.box{
+    width: 50%;
+    height: 100%;
+}
+main section.contact section.main4 .iframe iframe{
+    width: 100%;
+    height: 100%;
+}
+main section.contact section.main4 .input{
+    background-color: var(--black);
+    padding: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+main section.contact section.main4 .input h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+main section.contact section.main4 .input .inputForm {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+main section.contact section.main4 .input .inputForm div.sm {
+    border: 2px solid #fff;
+    width: 100%;
+    height: 30.3%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main section.contact section.main4 .input .inputForm div.sm i {
+    font-size: 1.4rem;
+}
+main section.contact section.main4 .input .inputForm div.sm input {
+    width: 93%;
+    height: 70px;
+    background-color: transparent;
+    color: #fff;
+}
+main section.contact section.main4 .input .inputForm div.sm ::placeholder {
+    font-size: 1.3rem;
+}
+main section.contact section.main4 .input button{
+    width: 250px;
+    height: 40px;
+    background-color: var(--main-color);
+    border: 2px solid transparent;
+    color: #fff;
+    font-size: 1.1rem;
+}
+main section.contact section.main4 .input button:hover {
+    border-color: var(--main-color);
+    background-color: var(--hovered);
+
+}
 
 
 
 
 
+
+
+
+
+
+@media screen and (min-width: 500px) {
+    main section.about {
+        padding: 30px;
+    }
+    main section.about section.main{
+        width: 80%;
+    }
+    main section.products section.main2 {
+        width: 80%;
+    }
+}
+@media screen and (min-width: 550px) {
+    main section.menu section.main1 {
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(3, 350px);
+    }
+    main section.products section.main2 {
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(2, 600px);
+    }
+    main section.reviews section.main3 {
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(1, 500px);
+    }
+}
 
 
 @media screen and (min-width: 850px) {
     header nav ul {
+        position: relative;
+        top: 0;
+        left: 0;
         width: auto;
+        height: auto;
         padding: .5rem 1rem;
         font-size: 1.2rem;
         display: flex;
+        background-color: transparent;
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    header nav ul.active {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); /* open */
+    }
+    header nav ul #ulClose {
+        display: none;
+    }
+    header nav .icons #barIcons0 {
+        display: block;
     }
     header nav ul li {
         display: inline;
@@ -100,6 +670,7 @@ header nav .icons i {
     header nav ul li div a {
         color: #fff;
         transition: all .3s ease-in-out ;
+        font-weight: normal;
     }
     header nav ul li div .underline {
         width: 3rem;
@@ -117,4 +688,115 @@ header nav .icons i {
     header nav ul li div:hover a {
         color: var(--main-color);
     }
+    header nav .icons #barIcons {
+        display: none;
+    }
+    header .stuffs .search{
+        position: relative;
+        left: 50%;
+        width: 40%;
+    }
+    header section.main {
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        text-align: left;
+        padding-left: 150px;
+    }
+    header section.main div.container {
+        width: 600px;
+    }
+    header section.main div.container h1 {
+        font-size: 4rem;
+    }
+    header section.main div.container p {
+        font-size: 1.4rem;
+    }
+    header section.main div.container p,
+    header section.main div.container a button {
+        margin-top: 10px;
+    }
+    main section div.text{
+        font-size: 2.3rem;
+    }
+    main section.about section.main{
+        flex-direction: row;
+    }
+    main section.about section.main {
+        display: flex;
+        height: 500px;
+    }
+    main section.about section.main div {
+        width: 50%;
+        height: 100%;
+    }
 }
+@media screen and (min-width: 1050px) {
+    main section.menu section.main1 {
+        grid-template-columns: repeat(3, 28%);
+        grid-template-rows: repeat(2, 350px);
+    }
+    main section.products section.main2 {
+        grid-template-columns: repeat(3, 28%);
+        grid-template-rows: repeat(1, 600px);
+    }
+    main section.reviews section.main3 {
+        grid-template-columns: repeat(3, 28%);
+        grid-template-rows: repeat(1, 500px);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

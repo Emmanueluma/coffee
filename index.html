@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/ed043afa12.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="file:///C:/Users/Emmanuel%20uma/Desktop/fontawesome-free-6.2.0-web/fontawesome-free-6.2.0-web/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
@@ -14,7 +18,8 @@
             <div class="img">
                 <img src="images/logo.png" alt="">
             </div>
-            <ul>
+            <ul id="ul" class="ul">
+                <i id="ulClose" class="fas fa-close"></i>
                 <li><div><a href="#home">home</a><div class="underline"></div></div></li>
                 <li><div><a href="#about">about</a><div class="underline"></div></div></li>
                 <li><div><a href="#menu">menu</a><div class="underline"></div></div></li>
@@ -23,15 +28,334 @@
                 <li><div><a href="#contact">contact</a><div class="underline"></div></div></li>
                 <li><div><a href="#blogs">blogs</a><div class="underline"></div></div></li>
             </ul>
+            <div class="space"></div>
             <div class="icons">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-shopping-cart"></i>
-                <i class="fas fa-bars"></i>
+                <i id="searchIcon" class="fas fa-search"></i>
+                <i id="cartIcon" class="fas fa-shopping-cart"></i>
+                <i id="barIcons" class="fas fa-bars"></i>
+                <i id="barIcons0" class="fas fa-bars"></i>
             </div>
         </nav>
+        <div class="stuffs">
+            <form action="#" class="search" id="searchMenu">
+                <label for="searchInput" class="fas fa-search" id="label"></label>
+                <input id="searchInput" type="search" placeholder="search...">
+            </form>
+            </section>
+            <section id="cart" class="cart">
+                <div class="container">
+                    <div class="img">
+                        <img src="images/cart-item-1.png" alt="" >
+                    </div>
+                    <div class="text">
+                        <h3>cart item 01</h3>
+                        <p>$15.99/</p>
+                    </div>
+                    <div class="delete">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div>
+                <!-- <div class="container">
+                    <div class="img">
+                        <img src="images/cart-item-2.png" alt="" >
+                    </div>
+                    <div class="text">
+                        <h3>cart item 01</h3>
+                        <p>$15.99/</p>
+                    </div>
+                    <div class="delete">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="img">
+                        <img src="images/cart-item-1.png" alt="" >
+                    </div>
+                    <div class="text">
+                        <h3>cart item 01</h3>
+                        <p>$15.99/</p>
+                    </div>
+                    <div class="delete">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div> -->
+                <button>checkout now</button>
+            </section>
+            <section class="menu00">
+                <ul class="ul01" id="ul01">
+                    <i id="ulClose0" class="fas fa-close"></i>
+                    <li><a href="#home">home</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#menu">menu</a></li>
+                    <li><a href="#products">products</a></li>
+                    <li><a href="#reviews">reviews</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    <li><a href="#blogs">blogs</a></li>
+                </ul>
+            </section>
+        </div>
+        <section class="main" id="home">
+            <div class="container">
+                <h1>fresh coffee in the morning</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem deserunt dolore placeat ea recusandae deleniti.</p>
+                <a href="#"><button>get it now</button></a>
+            </div>
+        </section>
     </header>
-    <main></main>
+    <main>
+        <section class="about" id="about">
+            <div class="text">
+                <h1>about <span>us</span></h1>
+            </div>
+            <section class="main">
+                <div class="img">
+                    <img src="images/about-img.jpeg" alt="">
+                </div>
+                <div class="txt">
+                    <h3>what makes our coffee speical?</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ex expedita quisquam minima nobis, repellendus dolorem omnis quasi,
+                        eos doloremque iure dolore voluptatem odio molestiae illo nemo reprehenderit
+                        totam impedit quis!
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Quia repudiandae nihil modi distinctio ut exercitationem 
+                        cumque deleniti atque error quidem.
+                    </p>
+                    <button>learn more</button>
+                </div>
+            </section>
+        </section>
+        <section class="menu margin" id="menu">
+            <div class="text">
+                <h1>our <span>menu</span></h1>
+            </div>
+            <section class="main1">
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-1.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-2.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-3.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-4.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-5.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="inner img">
+                        <img src="images/menu-6.png" alt="">
+                    </div>
+                    <div class="inner txt">
+                        <h2>tasty and healthy</h2>
+                        <p>$15.99 <span>$20.99</span></p>
+                        <button>add to cart</button>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section class="products margin" id="products">
+            <div class="text">
+                <h1>lastest <span>products</span></h1>
+            </div>
+            <section class="main2">
+                <section class="box">
+                    <div class="top" id="top">
+                        <a href="#top" class="fas fa-shopping-cart"></a>
+                        <a href="#top" class="fas fa-heart"></a>
+                        <a href="#top" class="fas fa-eye"></a>
+                    </div>
+                    <div class="middle">
+                        <img src="images/product-1.png" alt="">
+                    </div>
+                    <div class="bottom">
+                        <h1>fresh coffee</h1>
+                        <section>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </section>
+                        <h3>$15.99 <span>20.98</span></h3>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="top" id="top">
+                        <a href="#top" class="fas fa-shopping-cart"></a>
+                        <a href="#top" class="fas fa-heart"></a>
+                        <a href="#top" class="fas fa-eye"></a>
+                    </div>
+                    <div class="middle">
+                        <img src="images/product-2.png" alt="">
+                    </div>
+                    <div class="bottom">
+                        <h1>fresh coffee</h1>
+                        <section>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </section>
+                        <h3>$15.99 <span>20.98</span></h3>
+                    </div>
+                </section>
+                <section class="box">
+                    <div class="top" id="top">
+                        <a href="#top" class="fas fa-shopping-cart"></a>
+                        <a href="#top" class="fas fa-heart"></a>
+                        <a href="#top" class="fas fa-eye"></a>
+                    </div>
+                    <div class="middle">
+                        <img src="images/product-3.png" alt="">
+                    </div>
+                    <div class="bottom">
+                        <h1>fresh coffee</h1>
+                        <section>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </section>
+                        <h3>$15.99 <span>20.98</span></h3>
+                    </div>
+                </section>
+            </section>
+        </section>
+        <section class="reviews margin" id="reviews">
+            <div class="text">
+                <h1>customer's <span>reviews</span></h1>
+            </div>
+            <section class="main3">
+                <div class="box">
+                    <h1>"</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
+                        dicta ratione similique labore quasi numquam corporis voluptatem sit
+                        odit assumenda maxime nulla cum!
+                    </p>
+                    <img src="images/pic-1.png" alt="">
+                    <h2>john doe</h2>
+                    <section>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </section>
+                </div>
+                <div class="box">
+                    <h1>"</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
+                        dicta ratione similique labore quasi numquam corporis voluptatem sit
+                        odit assumenda maxime nulla cum!
+                    </p>
+                    <img src="images/pic-2.png" alt="">
+                    <h2>john doe</h2>
+                    <section>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </section>
+                </div>
+                <div class="box">
+                    <h1>"</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
+                        dicta ratione similique labore quasi numquam corporis voluptatem sit
+                        odit assumenda maxime nulla cum!
+                    </p>
+                    <img src="images/pic-3.png" alt="">
+                    <h2>john doe</h2>
+                    <section>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </section>
+                </div>
+            </section>
+        </section>
+        <section class="contact margin" id="contact">
+            <div class="text">
+                <h1>contact <span>us</span></h1>
+            </div>
+            <section class="main4">
+                <div class="box iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.760477431455!2d7.428681175581729!3d10.51952226387874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104d359077275d1d%3A0x1dbc5dc345a9207f!2sHilal%20ict%20solution!5e0!3m2!1sen!2sng!4v1671206363465!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="box input">
+                    <h1>get in touch</h1>
+                    <div class="inputForm">
+                        <div class="sm">
+                            <label for="theName" class="fa-solid fa-user"></label>
+                            <input type="text" name="theName" placeholder="name" id="theName">
+                        </div>
+                        <div class="sm">
+                            <label for="theEmail" class="fas fa-envelope"></label>
+                            <input type="email" name="theEmail" placeholder="email" id="theEmail">
+                        </div>
+                        <div class="sm">
+                            <label for="theNumber" class="fas fa-phone"></label>
+                            <input type="number" name="theNumber" placeholder="number" id="theNumber">
+                        </div>
+                    </div>
+                    <button>contact now</button>
+                </div>
+            </section>
+        </section>
+    </main>
     <footer></footer>
-    <script src="brain.js"></script>
+    <script src="brains.js"></script>
 </body>
 </html>
