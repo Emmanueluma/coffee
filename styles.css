@@ -47,7 +47,7 @@ button {
 } 
 header nav {
     background-color: var(--bg);
-    height: 70px;
+    height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +57,7 @@ header nav {
     border-bottom: var(--border);
 }
 header nav .img {
-    width: 95px;
+    width: 120px;
     height: 90%;
     display: flex;
     justify-content: center;
@@ -139,7 +139,8 @@ header .stuffs ul li a {
 }
 header nav .icons {
     position: fixed;
-    right: 0;
+    z-index: 999;
+    right: 10px;
     width: 150px;
     height: 50px;
     display: flex;
@@ -161,6 +162,7 @@ header nav .icons #barIcons0 {
 header .stuffs {
     position: fixed;
     width: 100%;
+    z-index: 996;
 }
 header .stuffs .search{
     position: fixed;
@@ -360,7 +362,8 @@ main section.margin {
 }
 main section.menu div.text, 
 main section.products div.text,
-main section.reviews div.text{
+main section.reviews div.text,
+main section.blogs div.text{
     color: #fff;
     width: 100%;
     text-align: center;
@@ -368,7 +371,8 @@ main section.reviews div.text{
 }
 main section.menu div.text span,
 main section.products div.text span,
-main section.reviews div.text span{
+main section.reviews div.text span,
+main section.blogs div.text span{
     color: var(--main-color);
 }
 main section.menu section.main1 {
@@ -456,13 +460,17 @@ main section.products section.main2 section.box .top {
     align-items: center;
 }
 main section.products section.main2 section.box .top a{
-    padding: 20px;
+    width: 50px;
+    height: 50px;
     border: 1px solid #fff;
     color: #fff;
     font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 main section.products section.main2 section.box .top a:hover {
-    color: var(--main-color);
+    background-color: var(--hovered);
 }
 main section.products section.main2 section.box .middle{
     height: 50%;
@@ -522,27 +530,34 @@ main section.reviews section.main3 div.box h1 {
 main section.reviews section.main3 div.box img {
     width: 120px;
     height: 120px;
-    clip-path: polygon(0 0, 100% 0, 100% 77%, 0% 100%);
+    clip-path: polygon(0 0, 100% 8%, 100% 94%, 0% 100%);
 }
 main section.reviews section.main3 div.box section {
     font-size: 1.4rem;
     color: var(--main-color);
 }
 main section.contact section.main4 {
-    width: 80%;
+    width: 90%;
     height: 400px;
     margin: 0 auto;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 main section.contact section.main4 div.box{
-    width: 50%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
 }
 main section.contact section.main4 .iframe iframe{
     width: 100%;
     height: 100%;
 }
-main section.contact section.main4 .input{
+main section.contact section.main4 form {
+    width: 100%;
+    height: 100%;
+}
+main section.contact section.main4 .box.input{
     background-color: var(--black);
     padding: 20px;
     color: #fff;
@@ -550,10 +565,12 @@ main section.contact section.main4 .input{
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+    height: 300px;
 }
 main section.contact section.main4 .input h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
+    font-weight: 600;
 }
 main section.contact section.main4 .input .inputForm {
     width: 100%;
@@ -564,7 +581,7 @@ main section.contact section.main4 .input .inputForm {
     flex-direction: column;
 }
 main section.contact section.main4 .input .inputForm div.sm {
-    border: 2px solid #fff;
+    border: var(--border);
     width: 100%;
     height: 30.3%;
     padding: 10px;
@@ -577,15 +594,20 @@ main section.contact section.main4 .input .inputForm div.sm i {
 }
 main section.contact section.main4 .input .inputForm div.sm input {
     width: 93%;
-    height: 70px;
+    height: 50px;
     background-color: transparent;
     color: #fff;
+    font-size: 1.3rem;
+}
+main section.contact section.main4 .input .inputForm div.sm input:focus{
+    border-bottom: .1rem solid #fff;
+    background-color: transparent;
 }
 main section.contact section.main4 .input .inputForm div.sm ::placeholder {
     font-size: 1.3rem;
 }
 main section.contact section.main4 .input button{
-    width: 250px;
+    width: 150px;
     height: 40px;
     background-color: var(--main-color);
     border: 2px solid transparent;
@@ -595,18 +617,132 @@ main section.contact section.main4 .input button{
 main section.contact section.main4 .input button:hover {
     border-color: var(--main-color);
     background-color: var(--hovered);
-
+}
+main section.blogs section.main5 {
+    width: 98%;
+    padding: 10px 5px;
+    margin: 0 auto;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 98%);
+    grid-template-rows: repeat(3, 500px);
+    grid-gap: 20px;
+    justify-content: center;
+}
+main section.blogs section.main5 .box5{
+    border: 1px solid #fff;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+main section.blogs section.main5 .box5 .inner{
+    width: 100%;
+    height: 50%;
+}
+main section.blogs section.main5 .box5 .img{
+    overflow: hidden;
+}
+main section.blogs section.main5 .box5 .inner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+main section.blogs section.main5 .box5 .inner img:hover {
+    transform: scale(1.2);
+}
+main section.blogs section.main5 .box5 .text8{
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+}
+main section.blogs section.main5 .box5 .text8 h1 {
+    font-size: 1.6rem;
+}
+main section.blogs section.main5 .box5 .text8 h2 {
+    font-size: 1.3rem;
+    color: var(--main-color);
+}
+main section.blogs section.main5 .box5 .text8 button{
+    width: 200px;
+    height: 40px;
+    background-color: var(--main-color);
+    border: 2px solid transparent;
+    color: #fff;
+    font-size: 1.1rem;
+}
+main section.blogs section.main5 .box5 .text8 button:hover{
+    width: 210px;
+    background-color: var(--hovered);
+    border-color: var(--main-color);
+}
+footer{
+    width: 100%;
+    height: 200px;
+    background-color: var(--black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+footer div.box{
+    width: 100%;
+    height: 30%;
+}
+footer div.box1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+footer div.box .in{
+    width: auto;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer div.box .in a{
+    padding: 18px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: 1.1rem;
+    margin: 0 10px;
+}
+footer div.box .in a.fa-facebook-f{
+    margin-left: 0;
+}
+footer div.box .in a:hover{
+    background-color: var(--hovered);
+    transform: rotate(50deg);
+}
+footer div.box3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1.1rem;
+}
+footer div.box3 p span {
+    color: var(--main-color);
 }
 
+@media screen and (min-width:410px) {
+    
+    footer div.box .in a{
+        padding: 20px;
+        font-size: 1.5rem;
+    }
+}
 
-
-
-
-
-
-
-
-
+@media screen and (max-width: 500px) {
+    footer div.box2{
+        display: none;
+    }
+}
 @media screen and (min-width: 500px) {
     main section.about {
         padding: 30px;
@@ -617,6 +753,24 @@ main section.contact section.main4 .input button:hover {
     main section.products section.main2 {
         width: 80%;
     }
+}
+@media screen and (min-width: 900px) {
+    main section.contact section.main4 div.box,
+    main section.contact section.main4 .box.input{
+        width: 50%;
+        height: 100%;
+    }
+    main section.contact section.main4 {
+        width: 80%;
+        flex-direction: row;
+    }
+    main section.contact section.main4 .input h1 {
+        font-size: 3rem;
+    }
+    footer div.box3{
+        font-size: 1.6rem;
+    }
+
 }
 @media screen and (min-width: 550px) {
     main section.menu section.main1 {
@@ -630,6 +784,10 @@ main section.contact section.main4 .input button:hover {
     main section.reviews section.main3 {
         grid-template-columns: repeat(2, 48%);
         grid-template-rows: repeat(1, 500px);
+    }
+    main section.blogs section.main5 {
+        grid-template-columns: repeat(2, 48%);
+        grid-template-rows: repeat(2, 500px);
     }
 }
 
@@ -724,7 +882,7 @@ main section.contact section.main4 .input button:hover {
     }
     main section.about section.main {
         display: flex;
-        height: 500px;
+        height: 400px;
     }
     main section.about section.main div {
         width: 50%;
@@ -742,6 +900,10 @@ main section.contact section.main4 .input button:hover {
     }
     main section.reviews section.main3 {
         grid-template-columns: repeat(3, 28%);
+        grid-template-rows: repeat(1, 500px);
+    }
+    main section.blogs section.main5 {
+        grid-template-columns: repeat(3, 29%);
         grid-template-rows: repeat(1, 500px);
     }
 }

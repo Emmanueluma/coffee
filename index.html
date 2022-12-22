@@ -55,7 +55,7 @@
                         <i class="fas fa-close"></i>
                     </div>
                 </div>
-                <!-- <div class="container">
+                <div class="container">
                     <div class="img">
                         <img src="images/cart-item-2.png" alt="" >
                     </div>
@@ -78,7 +78,7 @@
                     <div class="delete">
                         <i class="fas fa-close"></i>
                     </div>
-                </div> -->
+                </div>
                 <button>checkout now</button>
             </section>
             <section class="menu00">
@@ -275,8 +275,7 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione similique labore quasi numquam corporis voluptatem sit
-                        odit assumenda maxime nulla cum!
+                        dicta ratione
                     </p>
                     <img src="images/pic-1.png" alt="">
                     <h2>john doe</h2>
@@ -293,8 +292,7 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione similique labore quasi numquam corporis voluptatem sit
-                        odit assumenda maxime nulla cum!
+                        dicta ratione
                     </p>
                     <img src="images/pic-2.png" alt="">
                     <h2>john doe</h2>
@@ -311,8 +309,7 @@
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione similique labore quasi numquam corporis voluptatem sit
-                        odit assumenda maxime nulla cum!
+                        dicta ratione
                     </p>
                     <img src="images/pic-3.png" alt="">
                     <h2>john doe</h2>
@@ -330,32 +327,95 @@
             <div class="text">
                 <h1>contact <span>us</span></h1>
             </div>
-            <section class="main4">
+            <section class="main4" id="main4">
                 <div class="box iframe">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.760477431455!2d7.428681175581729!3d10.51952226387874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104d359077275d1d%3A0x1dbc5dc345a9207f!2sHilal%20ict%20solution!5e0!3m2!1sen!2sng!4v1671206363465!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="box input">
+                <form  class="box input" id="form010">
                     <h1>get in touch</h1>
                     <div class="inputForm">
-                        <div class="sm">
+                        <div class="sm " id="theNameDiv">
                             <label for="theName" class="fa-solid fa-user"></label>
                             <input type="text" name="theName" placeholder="name" id="theName">
                         </div>
-                        <div class="sm">
+                        <div class="sm" id="theEmailDiv">
                             <label for="theEmail" class="fas fa-envelope"></label>
                             <input type="email" name="theEmail" placeholder="email" id="theEmail">
                         </div>
-                        <div class="sm">
+                        <div class="sm" id="theNumberDiv">
                             <label for="theNumber" class="fas fa-phone"></label>
-                            <input type="number" name="theNumber" placeholder="number" id="theNumber">
+                            <input type="number" name="theNumber" placeholder="number" id="theNumber"> <!-- maxlength="11" -->
                         </div>
                     </div>
-                    <button>contact now</button>
-                </div>
+                    <p id="errorMessage"></p>
+                    <button id="errorBtn" type="submit">contact now</button>
+                </form>
+            </section>
+        </section>
+        <section class="blogs margin" id="blogs">
+            <div class="text">
+                <h1>our <span>blogs</span></h1>
+            </div>
+            <section class="main5">
+                <section class="box5">
+                    <div class="inner img">
+                        <img src="images/blog-1.jpeg" alt="">
+                    </div>
+                    <div class="inner text8">
+                        <h1>tasty and refreshing coffee</h1>
+                        <h2>by admin / 21 dec, 2022</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nesciunt in.
+                        </p>
+                        <button>read more</button>
+                    </div>
+                </section>
+                <section class="box5">
+                    <div class="inner img">
+                        <img src="images/blog-2.jpeg" alt="">
+                    </div>
+                    <div class="inner text8">
+                        <h1>tasty and refreshing coffee</h1>
+                        <h2>by admin / 21 dec, 2022</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nesciunt in.
+                        </p>
+                        <button>read more</button>
+                    </div>
+                </section>
+                <section class="box5">
+                    <div class="inner img">
+                        <img src="images/blog-3.jpeg" alt="">
+                    </div>
+                    <div class="inner text8">
+                        <h1>tasty and refreshing coffee</h1>
+                        <h2>by admin / 21 dec, 2022</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            Nesciunt in.
+                        </p>
+                        <button>read more</button>
+                    </div>
+                </section>
             </section>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <div class="box box1">
+            <div class="in" id="in">
+                <a href="https://www.facebook.com/profile.php?id=100076048962580" class="fa-brands fa-facebook-f"></a>
+                <a href="https://www.twitter.com/nicki_scott0" class="fa-brands fa-twitter"></a>
+                <a href="https://www.instagram.com/nicki_scott001?igshid=ymMyMTA2M2y=" class="fa-brands fa-instagram"></a>
+                <a href="#in"class="fa-brands fa-linkedin"></a>
+                <a href="#in" class="fa-brands fa-linkedin"></a>
+            </div>
+        </div>
+        <div class="box box3">
+            <p>created by <span>Emmanuel uma</span> | all right reserved</p>
+        </div>
+    </footer>
     <script src="brains.js"></script>
 </body>
 </html>
