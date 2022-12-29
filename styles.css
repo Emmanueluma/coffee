@@ -41,13 +41,14 @@ body {
 }
 button {
     cursor: pointer;
+    border-radius: 5px;
 }
 #ulClose0 {
     display: none;
 } 
 header nav {
     background-color: var(--bg);
-    height: 100px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,7 +58,7 @@ header nav {
     border-bottom: var(--border);
 }
 header nav .img {
-    width: 120px;
+    width: 100px;
     height: 90%;
     display: flex;
     justify-content: center;
@@ -105,7 +106,8 @@ header nav ul li a {
 }
 header nav .space{
     width: 150px;
-}header .stuffs ul{
+}
+header .stuffs ul{
     position: fixed;
     height: 100vh;
     top: 70px;
@@ -190,15 +192,14 @@ header .stuffs .search #label {
     font-size: 1.3rem;
 }
 header .stuffs section.cart {
-    width: 400px;
+    width: 100%;
     padding: 5px;
+    position: fixed;
+    top: 70px;
+    overflow-y: scroll;
 }
 header .stuffs section.cart.active {
     clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-}
-header .stuffs section.cart {
-    position: fixed;
-    top: 70px;
 }
 header .stuffs section.cart .container {
     width: 100%;
@@ -268,7 +269,7 @@ header section.main div.container h1 {
     text-transform: uppercase;
 }
 header section.main div.container a button {
-    width: 30%;
+    width: 150px;
     height: 50px;
     background-color: var(--main-color);
     color: #fff;
@@ -296,7 +297,6 @@ main section div.text{
     color: var(--main-color);
     width: 100%;
     text-align: center;
-    border: 2px solid#000;
     font-size: 2rem;
     margin-bottom: 4rem;
     text-transform: uppercase;
@@ -384,15 +384,32 @@ main section.menu section.main1 {
     grid-template-rows: repeat(6, 350px);
     grid-gap: 20px;
     justify-content: center;
+    position: relative;
+}
+main section.menu section.main1 .pop{
+    position: fixed;
+    left: 20px;
+    top: 40%;
+    z-index: 5;
+    width: 150px;
+    height: 50px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    background-color: var(--hovered);
+    border-radius: 20px;
+    color: #fff;
+    font-size: 1.4rem;
 }
 main section.menu section.main1 .box {
     border: 1px solid #fff;
     border-top-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
-main section.menu section.main1 .box:hover {
+/* main section.menu section.main1 .box:hover {
     background-color: #fff;
-}
+} */
 main section.menu section.main1 .box .inner {
     width: 100%;
     height: 50%;
@@ -411,16 +428,20 @@ main section.menu section.main1 section.box .txt{
     font-size: 1.1rem;
     transition: all.1s;
 }
-main section.menu section.main1 .box:hover .txt {
+/* main section.menu section.main1 .box:hover .txt {
     color: #000;
-}
+} */
 main section.menu section.main1 section.box .txt p {
     font-size: 2rem;
 }
+/* main section.menu section.main1 section.box .txt p b,
+main section.menu section.main1 section.box .txt p span
+{
+    transition: .0s;
+} */
 main section.menu section.main1 section.box .txt p span {
     font-size: 1.3rem;
     text-decoration: line-through;
-    transition: .0s;
 }
 main section.menu section.main1 section.box .txt button{
     width: 200px;
@@ -428,6 +449,7 @@ main section.menu section.main1 section.box .txt button{
     background-color: var(--main-color);
     border: 2px solid transparent;
     font-size: 1.2rem;
+    position: relative;
 }
 main section.menu section.main1 section.box .txt button:hover {
     border-color: var(--main-color);
@@ -459,9 +481,10 @@ main section.products section.main2 section.box .top {
     justify-content: space-around;
     align-items: center;
 }
-main section.products section.main2 section.box .top a{
+main section.products section.main2 section.box .top button{
     width: 50px;
     height: 50px;
+    background-color: transparent;
     border: 1px solid #fff;
     color: #fff;
     font-size: 1.2rem;
@@ -469,7 +492,7 @@ main section.products section.main2 section.box .top a{
     justify-content: center;
     align-items: center;
 }
-main section.products section.main2 section.box .top a:hover {
+main section.products section.main2 section.box .top button:hover {
     background-color: var(--hovered);
 }
 main section.products section.main2 section.box .middle{
@@ -490,6 +513,9 @@ main section.products section.main2 section.box .bottom{
     align-items: center;
     flex-direction: column;
     font-size: 1.5rem;
+}
+main section.products section.main2 section.box .bottom h3 {
+    opacity: 0;
 }
 main section.products section.main2 section.box .bottom h3 span {
     text-decoration: line-through;
@@ -598,6 +624,7 @@ main section.contact section.main4 .input .inputForm div.sm input {
     background-color: transparent;
     color: #fff;
     font-size: 1.3rem;
+    text-transform: lowercase;
 }
 main section.contact section.main4 .input .inputForm div.sm input:focus{
     border-bottom: .1rem solid #fff;
@@ -705,7 +732,7 @@ footer div.box .in{
     align-items: center;
 }
 footer div.box .in a{
-    padding: 18px;
+    padding: 15px;
     border-radius: 50%;
     color: #fff;
     background-color: var(--main-color);
@@ -725,6 +752,8 @@ footer div.box3{
     align-items: center;
     color: #fff;
     font-size: 1.1rem;
+    text-align: center;
+    padding: 5px;
 }
 footer div.box3 p span {
     color: var(--main-color);
@@ -744,11 +773,17 @@ footer div.box3 p span {
     }
 }
 @media screen and (min-width: 500px) {
+    header .stuffs section.cart {
+        width: 400px;
+    }
     main section.about {
         padding: 30px;
     }
     main section.about section.main{
         width: 80%;
+    }
+    main section.menu section.main1 .pop{
+        top: 15%;
     }
     main section.products section.main2 {
         width: 80%;

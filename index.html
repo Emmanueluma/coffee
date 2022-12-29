@@ -42,7 +42,34 @@
                 <input id="searchInput" type="search" placeholder="search...">
             </form>
             </section>
-            <section id="cart" class="cart">
+            <section id="cart" class="cart cart001">
+                <h3>total: $<span id="total">50</span></h3>
+                <h4>items: <span id="items">30</span></h4>
+                <button>get now</button>
+                <!-- <div class="container">
+                    <div class="img">
+                        <img src="images/cart-item-1.png" alt="" >
+                    </div>
+                    <div class="text">
+                        <h3>cart item 01</h3>
+                        <p>$15.99/</p>
+                    </div>
+                    <div class="delete">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div> -->
+                <!-- <div class="container">
+                    <div class="img">
+                        <img src="images/menu-1.png" alt="" >
+                    </div>
+                    <div class="text">
+                        <h3>cart item 01</h3>
+                        <p>$15.99/</p>
+                    </div>
+                    <div class="delete">
+                        <i class="fas fa-close"></i>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="img">
                         <img src="images/cart-item-1.png" alt="" >
@@ -54,32 +81,7 @@
                     <div class="delete">
                         <i class="fas fa-close"></i>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="img">
-                        <img src="images/cart-item-2.png" alt="" >
-                    </div>
-                    <div class="text">
-                        <h3>cart item 01</h3>
-                        <p>$15.99/</p>
-                    </div>
-                    <div class="delete">
-                        <i class="fas fa-close"></i>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="img">
-                        <img src="images/cart-item-1.png" alt="" >
-                    </div>
-                    <div class="text">
-                        <h3>cart item 01</h3>
-                        <p>$15.99/</p>
-                    </div>
-                    <div class="delete">
-                        <i class="fas fa-close"></i>
-                    </div>
-                </div>
-                <button>checkout now</button>
+                </div> -->
             </section>
             <section class="menu00">
                 <ul class="ul01" id="ul01">
@@ -97,8 +99,8 @@
         <section class="main" id="home">
             <div class="container">
                 <h1>fresh coffee in the morning</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem deserunt dolore placeat ea recusandae deleniti.</p>
-                <a href="#"><button>get it now</button></a>
+                <p>It's amazing how the world begins to change through the eyes of a cup of coffee.</p>
+                <a href="#menu"><button>get it now</button></a>
             </div>
         </section>
     </header>
@@ -114,15 +116,13 @@
                 <div class="txt">
                     <h3>what makes our coffee speical?</h3>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ex expedita quisquam minima nobis, repellendus dolorem omnis quasi,
-                        eos doloremque iure dolore voluptatem odio molestiae illo nemo reprehenderit
-                        totam impedit quis!
+                        The first thing that comes to mind when thinking about specialty coffee is its advanced quality. 
+                        The flavors hidden in a cup of coffee are rich and crisp, and this comes not just from the quality 
+                        of the specialty coffee beans, but from the work ethic and dedication put into it by the farmer.
                     </p>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Quia repudiandae nihil modi distinctio ut exercitationem 
-                        cumque deleniti atque error quidem.
+                        We grade our coffees into different sizes and quality, 
+                        throw out the lower quality beans.
                     </p>
                     <button>learn more</button>
                 </div>
@@ -133,14 +133,15 @@
                 <h1>our <span>menu</span></h1>
             </div>
             <section class="main1">
+                <div class="pop">added</div>
                 <section class="box">
                     <div class="inner img">
                         <img src="images/menu-1.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-1">Ristretto coffee</h2>
+                        <p>$<b id="p1">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn1">add to cart</button>
                     </div>
                 </section>
                 <section class="box">
@@ -148,9 +149,9 @@
                         <img src="images/menu-2.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-2">Long Black coffee</h2>
+                        <p>$<b id="p2">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn2">add to cart</button>
                     </div>
                 </section>
                 <section class="box">
@@ -158,9 +159,9 @@
                         <img src="images/menu-3.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-3">Short Macchiato coffee</h2>
+                        <p>$<b id="p3">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn3">add to cart</button>
                     </div>
                 </section>
                 <section class="box">
@@ -168,9 +169,9 @@
                         <img src="images/menu-4.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-4">Long Macchiato coffee</h2>
+                        <p>$<b id="p4">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn4">add to cart</button>
                     </div>
                 </section>
                 <section class="box">
@@ -178,9 +179,9 @@
                         <img src="images/menu-5.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-5">Mezzo Mezzo (Piccolo) coffee</h2>
+                        <p>$<b id="p5">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn5">add to cart</button>
                     </div>
                 </section>
                 <section class="box">
@@ -188,9 +189,9 @@
                         <img src="images/menu-6.png" alt="">
                     </div>
                     <div class="inner txt">
-                        <h2>tasty and healthy</h2>
-                        <p>$15.99 <span>$20.99</span></p>
-                        <button>add to cart</button>
+                        <h2 id="h2-6">Cappuccino coffee</h2>
+                        <p>$<b id="p6">15.99</b> <span>$20.99</span> </p>
+                        <button id="btn6">add to cart</button>
                     </div>
                 </section>
             </section>
@@ -202,15 +203,15 @@
             <section class="main2">
                 <section class="box">
                     <div class="top" id="top">
-                        <a href="#top" class="fas fa-shopping-cart"></a>
-                        <a href="#top" class="fas fa-heart"></a>
-                        <a href="#top" class="fas fa-eye"></a>
+                        <button id="btn7" class="fas fa-shopping-cart"></button>
+                        <button id="like1" class="fas fa-heart"></button>
+                        <button id="seen1" class="fa-solid fa-eye-slash"></button>
                     </div>
                     <div class="middle">
                         <img src="images/product-1.png" alt="">
                     </div>
                     <div class="bottom">
-                        <h1>fresh coffee</h1>
+                        <h1 id="h2-7">nicaragua coffee</h1>
                         <section>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -218,20 +219,20 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star-half-stroke"></i>
                         </section>
-                        <h3>$15.99 <span>20.98</span></h3>
+                        <h3>$<b id="p7">15.99</b> <span>20.98</span></h3>
                     </div>
                 </section>
                 <section class="box">
                     <div class="top" id="top">
-                        <a href="#top" class="fas fa-shopping-cart"></a>
-                        <a href="#top" class="fas fa-heart"></a>
-                        <a href="#top" class="fas fa-eye"></a>
+                        <button id="btn8" class="fas fa-shopping-cart"></button>
+                        <button id="like2" class="fas fa-heart"></button>
+                        <button id="seen2" class="fa-solid fa-eye-slash"></button>
                     </div>
                     <div class="middle">
                         <img src="images/product-2.png" alt="">
                     </div>
                     <div class="bottom">
-                        <h1>fresh coffee</h1>
+                        <h1 id="h2-8">columbia coffee</h1>
                         <section>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -239,20 +240,20 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star-half-stroke"></i>
                         </section>
-                        <h3>$15.99 <span>20.98</span></h3>
+                        <h3>$<b id="p8">15.99</b> <span>20.98</span></h3>
                     </div>
                 </section>
                 <section class="box">
                     <div class="top" id="top">
-                        <a href="#top" class="fas fa-shopping-cart"></a>
-                        <a href="#top" class="fas fa-heart"></a>
-                        <a href="#top" class="fas fa-eye"></a>
+                        <button id="btn9" class="fas fa-shopping-cart"></button>
+                        <button id="like3" class="fas fa-heart"></button>
+                        <button id="seen3" class="fa-solid fa-eye-slash"></button>
                     </div>
                     <div class="middle">
                         <img src="images/product-3.png" alt="">
                     </div>
                     <div class="bottom">
-                        <h1>fresh coffee</h1>
+                        <h1 id="h2-9">peru coffee</h1>
                         <section>
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star"></i>
@@ -260,7 +261,7 @@
                             <i class="fa-solid fa-star"></i>
                             <i class="fa-solid fa-star-half-stroke"></i>
                         </section>
-                        <h3>$15.99 <span>20.98</span></h3>
+                        <h3>$<b id="p9">15.99</b> <span>20.98</span></h3>
                     </div>
                 </section>
             </section>
@@ -273,9 +274,9 @@
                 <div class="box">
                     <h1>"</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione
+                        I really like the atmosphere, good coffee, and nice interior. 
+                        This is a good place to get or try something new with friends. The drinks
+                        were all tasty and worthwhile.
                     </p>
                     <img src="images/pic-1.png" alt="">
                     <h2>john doe</h2>
@@ -290,9 +291,9 @@
                 <div class="box">
                     <h1>"</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione
+                        Will go again.I only popped in to get take-away cappuccinos,
+                        but I was struck by how friendly the service was. The cappuccinos 
+                        were wonderful too! And very well priced.
                     </p>
                     <img src="images/pic-2.png" alt="">
                     <h2>john doe</h2>
@@ -307,9 +308,10 @@
                 <div class="box">
                     <h1>"</h1>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Expedita aperiam perferendis ad repudiandae excepturi hic! Adipisci,
-                        dicta ratione
+                        This place is very different and well organized according to other places. 
+                        The food is amazing, music of your choice. 
+                        The owner is very sweet… Ever the best café. 
+                        The cost is fair for everything and the atmosphere is good.
                     </p>
                     <img src="images/pic-3.png" alt="">
                     <h2>john doe</h2>
