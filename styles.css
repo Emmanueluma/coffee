@@ -86,6 +86,7 @@ header nav ul {
 }
 header nav ul.active {
     clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); /* open */
+    z-index: 500;
 }
 header nav ul i {
     color: #000;
