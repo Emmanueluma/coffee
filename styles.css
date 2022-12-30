@@ -268,7 +268,7 @@ header .stuffs section.cart button {
 }
 header section.main {
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100dvh - 70px);
     background-image: url(images/home-img.jpeg);
     background-position: center;
     background-repeat: no-repeat;
@@ -466,6 +466,7 @@ main section.menu section.main1 section.box .txt p span {
 main section.menu section.main1 section.box .txt button{
     width: 200px;
     height: 40px;
+    color: #000;
     background-color: var(--main-color);
     border: 2px solid transparent;
     font-size: 1.2rem;
