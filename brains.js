@@ -181,7 +181,7 @@ btn9cart = btn9cart.replace('%tasty%',h2_9.innerText);
 
 
 
-
+let list = []
 
 
 
@@ -196,9 +196,16 @@ updateCart(btn6,btn6cart,p6);
 updateCart(btn7,btn7cart,p7);
 updateCart(btn8,btn8cart,p8);
 updateCart(btn9,btn9cart,p9);
-function updateCart(btn,btncart,p,pp){
+function updateCart(btn,btncart,p){
     btncart = btncart.replace('%15.99%', p);
     btn.addEventListener('click', e => {
+        /* list.push(btncart);
+        for (let i = 0; i < list.length; i++) {
+            list[i] == btncart
+            console.log(404)
+            
+        }
+        console.log(list) */
         pop.style.display = "flex";
         setTimeout(e => {
             pop.style.display = "none"
@@ -238,12 +245,10 @@ cart.addEventListener('click', e => {
 
 
 
-let seen1 = document.getElementById('seen1');
-let seen2 = document.getElementById('seen2');
-let seen3 = document.getElementById('seen3');
-seen(seen1);
-seen(seen2);
-seen(seen3);
+let seen1 = document.getElementsByClassName('fa-eye-slash');
+for (let i = 0; i < seen1.length; i++) {
+    seen(seen1[i]);
+}
 function seen(seen) {
     seen.addEventListener('click', () => {
         seen.classList.toggle('fa-eye');
@@ -276,14 +281,14 @@ function like(like){
     });
 }
 
-
-
 let date = document.getElementsByClassName('date');
 for (let i = 0; i < date.length; i++) {
     let date1 = new Date().getDate();
     let month = new Date().getMonth();
     let months = ['jan','feb', 'mar','apr','may', 'june', 'july', 'aug', 'sep', 'oct', 'nov' , 'dec'];
     let year = new Date().getFullYear();
-    date[i].textContent = `${date1}, ${months[month]}, ${year}`;
+    date[i].textContent = `${date1}, ${months[month]} ${year}`;
 }
+
+
 
