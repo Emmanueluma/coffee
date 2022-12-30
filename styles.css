@@ -161,6 +161,13 @@ header nav .icons i:hover {
 header nav .icons #barIcons0 {
     display: none;
 }
+header nav .icons div{
+    position: relative;
+}
+header nav .icons div p {
+    right: 0;
+    position: absolute;
+}
 header .stuffs {
     position: fixed;
     width: 100%;
@@ -181,6 +188,7 @@ header .stuffs .search input {
     width: 90%;
     height: 100%;
     padding: 20px;
+    font-size: 1.2rem;
 }
 header .stuffs .search input::placeholder {
     font-size: 1.2rem;
@@ -197,6 +205,18 @@ header .stuffs section.cart {
     position: fixed;
     top: 70px;
     overflow-y: scroll;
+}
+header .stuffs section.cart::-webkit-scrollbar{
+    width: .7rem;
+}
+
+header .stuffs section.cart::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+header .stuffs section.cart::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+    border-radius: 5rem;
 }
 header .stuffs section.cart.active {
     clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
@@ -632,6 +652,7 @@ main section.contact section.main4 .input .inputForm div.sm input:focus{
 }
 main section.contact section.main4 .input .inputForm div.sm ::placeholder {
     font-size: 1.3rem;
+    text-transform: capitalize;
 }
 main section.contact section.main4 .input button{
     width: 150px;

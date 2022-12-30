@@ -41,14 +41,23 @@ errorBtn.addEventListener('click', e => {
     errorMessage.textContent = msg; */
 
     /* let name, email, number, msg, suc; */
+    let msg;
     theName.value == '' ? theNameDiv.style.borderColor = "red" : theNameDiv.style.borderColor = "green";
     theEmail.value == '' ? theEmailDiv.style.borderColor = "red" : theEmailDiv.style.borderColor = "green";
     theNumber.value == '' ? theNumberDiv.style.borderColor = "red" : theNumberDiv.style.borderColor = "green";
 
     if(theName.value != '',theEmail.value != '', theNumber.value != '') {
-        theNameDiv.style.borderColor = "green";
-        theEmailDiv.style.borderColor = "green";
-        theNumberDiv.style.borderColor = "green";
+        msg = 'Successful';
+        setTimeout(() => {
+            errorMessage.textContent = '';
+            theNameDiv.style.borderColor = '#fff';
+            theNumberDiv.style.borderColor = '#fff';
+            theEmailDiv.style.borderColor = '#fff';
+            theName.value = '';
+            theNumber.value = '';
+            theEmail.value = '';
+        }, 500)
+        errorMessage.textContent = msg;
     }
 });
 
@@ -100,9 +109,11 @@ suc1 = '<div class="container"><div class="img"><img src="images/product-%0%.png
 
 
 let btn1cart, btn2cart, btn3cart, btn4cart, btn5cart, btn6cart, btn7cart, btn8cart, btn9cart,total, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, sum,
-p1, p2, p3, p4, p5, p6, p7, p8, p9, items, smile, inc, b;
+p1, p2, p3, p4, p5, p6, p7, p8, p9, items, smile, inc, b,cartBa,pop;
+pop = document.querySelector('.pop');
 total = document.getElementById('total');
 items = document.getElementById('items');
+cartBa = document.getElementById('cartBa');
 inc = 0;
 total.textContent = 0;
 
@@ -171,7 +182,7 @@ btn9cart = btn9cart.replace('%tasty%',h2_9.innerText);
 
 
 
-let pop = document.querySelector('.pop');
+
 
 
 
@@ -193,6 +204,7 @@ function updateCart(btn,btncart,p,pp){
             pop.style.display = "none"
         }, 1000)
         items.textContent = ++inc;
+        cartBa.textContent = inc;
         cart.insertAdjacentHTML('beforeend',btncart);
         b = document.getElementById('b');
         sum += p;
@@ -213,6 +225,7 @@ cart.addEventListener('click', e => {
             total.innerText = sum.toFixed(0);
         }
         items.textContent = --inc;
+        cartBa.textContent = inc;
         tar = e.target.parentNode.parentNode.parentNode;
         rem = e.target.parentNode.parentNode;
         tar.removeChild(rem);
@@ -244,13 +257,10 @@ function seen(seen) {
 }
 
 
-let like1 = document.getElementById('like1');
-let like2 = document.getElementById('like2');
-let like3 = document.getElementById('like3');
-
-like(like1);
-like(like2);
-like(like3);
+let like1 = document.getElementsByClassName('fa-heart');
+for (let i = 0; i < like1.length; i++) {
+    like(like1[i]);
+}
 function like(like){
     like.addEventListener('click', () => {
         if(like.style.color == '') {
@@ -265,15 +275,15 @@ function like(like){
         console.log(1)
     });
 }
-/* like1.addEventListener('click', () => {
-    if(like1.style.color == '') {
-        like1.style.color = 'var(--main-color)';
-    } else if(like1.style.color == 'var(--main-color)') {
-        like1.style.color = '';
-    }
-    like1.style.fontSize = '3.5rem';
-    setTimeout(() =>{
-        like1.style.fontSize = '1.2rem';
-    },500);
-    console.log(1)
-}); */
+
+
+
+let date = document.getElementsByClassName('date');
+for (let i = 0; i < date.length; i++) {
+    let date1 = new Date().getDate();
+    let month = new Date().getMonth();
+    let months = ['jan','feb', 'mar','apr','may', 'june', 'july', 'aug', 'sep', 'oct', 'nov' , 'dec'];
+    let year = new Date().getFullYear();
+    date[i].textContent = `${date1}, ${months[month]}, ${year}`;
+}
+
