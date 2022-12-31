@@ -26,6 +26,7 @@ theNumberDiv = document.getElementById('theNumberDiv');
 form.addEventListener('submit', e => {
     e.preventDefault();
 });
+theName.style.textTransform = 'capitalize';
 errorBtn.addEventListener('click', e => {
     /* let name, email, number, msg, suc;
     theName.value == '' ? name = 'your name is empty.': name ='';
@@ -292,3 +293,19 @@ for (let i = 0; i < date.length; i++) {
 
 
 
+let whatsappMain, whatsappFloatingIcon, whatsappClose, line;
+
+whatsappMain = document.getElementById('whatsappMain');
+whatsappFloatingIcon = document.getElementById('whatsappFloatingIcon');
+whatsappClose = document.getElementById('whatsappClose');
+line = document.getElementById('line');
+
+
+whatsappFloatingIcon.addEventListener('click', e => {
+    whatsappMain.classList.toggle('active');
+    line.classList.toggle('active');
+});
+whatsappClose.addEventListener('click', () => {
+    whatsappMain.classList.toggle('active');
+    line.classList.toggle('active');
+});
