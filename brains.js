@@ -1,5 +1,5 @@
 let searchIcon, searchMenu, ulClose, ul, barIcons, cart, cartIcon, barIcons0, ul01, errorMessage, errorBtn, theName, theEmail, theNumber,
-from, theNameDiv, theEmailDiv, theNumberDiv, domHtml;
+from, theNameDiv, theEmailDiv, theNumberDiv, domHtml, whatsappMain, whatsappFloatingIcon, whatsappClose, line, scrolled;
 
 searchIcon = document.getElementById('searchIcon');
 searchMenu = document.getElementById('searchMenu');
@@ -92,6 +92,21 @@ ulClose.addEventListener('click', e => {
     ul.classList.toggle('active');
 });
 
+whatsappMain = document.getElementById('whatsappMain');
+whatsappFloatingIcon = document.getElementById('whatsappFloatingIcon');
+whatsappClose = document.getElementById('whatsappClose');
+line = document.getElementById('line');
+
+
+whatsapp(whatsappFloatingIcon);
+whatsapp(whatsappClose);
+
+function whatsapp(ele) {
+    ele.addEventListener('click', () => {
+        whatsappMain.classList.toggle('active');
+        line.classList.toggle('active');
+    });
+}
 window.addEventListener('scroll', e => {
     ul.classList.remove('active');
     ul01.classList.remove('active');
@@ -101,6 +116,14 @@ window.addEventListener('scroll', e => {
     cartIcon.classList.remove('fa-close');
     searchMenu.classList.remove('active');
     searchIcon.classList.remove('fa-close');
+    whatsappMain.classList.remove('active');
+    /* if(window.scrollY){
+        scrolled = window.scrollY;
+        console.log(scrolled)
+    }
+    let scrolled1;
+    scrolled1 = window.scrollY;
+    console.log(scrolled1) */
 });
 
 
@@ -293,19 +316,3 @@ for (let i = 0; i < date.length; i++) {
 
 
 
-let whatsappMain, whatsappFloatingIcon, whatsappClose, line;
-
-whatsappMain = document.getElementById('whatsappMain');
-whatsappFloatingIcon = document.getElementById('whatsappFloatingIcon');
-whatsappClose = document.getElementById('whatsappClose');
-line = document.getElementById('line');
-
-
-whatsappFloatingIcon.addEventListener('click', e => {
-    whatsappMain.classList.toggle('active');
-    line.classList.toggle('active');
-});
-whatsappClose.addEventListener('click', () => {
-    whatsappMain.classList.toggle('active');
-    line.classList.toggle('active');
-});

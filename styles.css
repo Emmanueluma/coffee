@@ -278,15 +278,14 @@ header section.whatsapp .main {
     height: 400px;
     background-color: blue;
     margin-bottom: 10px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
-    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
 }
 header section.whatsapp .main.active{
-    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
+    display: flex;
 }
 header section.whatsapp .main div {
     width: 100%;
@@ -413,7 +412,7 @@ header section.whatsapp .floatingIcons{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: #fff;
     padding:  10px 15px;
     cursor: pointer;
@@ -422,7 +421,7 @@ header section.whatsapp .floatingIcons div.line{
     position: absolute;
     top: -2px;
     left: 0;
-    width: 190px;
+    width: 170px;
     height: 60px;
     content: '';
     border-radius: 30px;
@@ -460,7 +459,7 @@ header section.whatsapp .floatingIcons i{
 }
 header section.main {
     width: 100%;
-    height: calc(100dvh - 70px);
+    height: calc(100vh - 70px);
     background-image: url(images/home-img.jpeg);
     background-position: center;
     background-repeat: no-repeat;
