@@ -97,7 +97,6 @@ whatsappFloatingIcon = document.getElementById('whatsappFloatingIcon');
 whatsappClose = document.getElementById('whatsappClose');
 line = document.getElementById('line');
 
-
 whatsapp(whatsappFloatingIcon);
 whatsapp(whatsappClose);
 
@@ -107,6 +106,7 @@ function whatsapp(ele) {
         line.classList.toggle('active');
     });
 }
+let lastscroll = window.screenY;
 window.addEventListener('scroll', e => {
     ul.classList.remove('active');
     ul01.classList.remove('active');
@@ -117,13 +117,14 @@ window.addEventListener('scroll', e => {
     searchMenu.classList.remove('active');
     searchIcon.classList.remove('fa-close');
     whatsappMain.classList.remove('active');
-    /* if(window.scrollY){
-        scrolled = window.scrollY;
-        console.log(scrolled)
+    if (lastscroll < window.scrollY) {
+        /* console.log('we are going down') */
+        whatsappFloatingIcon.style.display = 'none';
+    }else{
+        /* console.log('we are going up'); */
+        whatsappFloatingIcon.style.display = 'flex';
     }
-    let scrolled1;
-    scrolled1 = window.scrollY;
-    console.log(scrolled1) */
+    lastscroll = window.scrollY;
 });
 
 

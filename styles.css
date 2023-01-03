@@ -409,7 +409,7 @@ header section.whatsapp .floatingIcons{
     float: right;
     background-color: rgb(25, 13, 139);
     border-radius: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
